@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AWS SageMaker Heart Disease Prediction | Anushka Sagar</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+<!-- TOP NAV -->
+<header class="project-nav">
+  <a href="../projects.html">← Back to Projects</a>
+</header>
+
+<!-- HERO -->
+<section class="project-hero">
+  <h1>AWS SageMaker – Heart Disease Prediction</h1>
+  <p class="project-tagline">
+    End-to-end machine learning pipeline on AWS using SageMaker, S3, and Scikit-learn
+  </p>
+
+  <div class="project-actions">
+    <a href="https://github.com/051821/SAGEMAKER"
+       target="_blank"
+       class="btn">
+      View GitHub
+    </a>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<main class="project-content">
+
+  <section class="project-card">
+    <h2>Overview</h2>
+    <p>
+      This project demonstrates a cloud-based, end-to-end machine learning workflow
+      for heart disease prediction using AWS SageMaker. It covers data ingestion from
+      Amazon S3, preprocessing, model training, evaluation, and experimentation with
+      both Scikit-learn pipelines and SageMaker’s built-in algorithms.
+    </p>
+  </section>
+
+  <section class="project-card">
+    <h2>Problem Statement</h2>
+    <p>
+      Medical datasets often contain a mix of numerical and categorical features.
+      Building a scalable ML pipeline that handles preprocessing, training, and
+      evaluation in a cloud environment is essential for real-world healthcare
+      applications.
+    </p>
+  </section>
+
+  <section class="project-card">
+    <h2>Data Pipeline</h2>
+    <ul>
+      <li>Programmatically created and managed S3 buckets using Boto3</li>
+      <li>Uploaded and loaded CSV datasets directly from Amazon S3</li>
+      <li>Performed train–test split and stored processed data back into S3</li>
+      <li>Ensured reproducible data access for training workflows</li>
+    </ul>
+  </section>
+
+  <section class="project-card">
+    <h2>Preprocessing & Modeling</h2>
+    <ul>
+      <li>Handled categorical features using One-Hot Encoding</li>
+      <li>Scaled numerical features using StandardScaler</li>
+      <li>Imputed missing values using SimpleImputer</li>
+      <li>Built a Scikit-learn Pipeline with ColumnTransformer</li>
+      <li>Trained a Random Forest classifier for prediction</li>
+    </ul>
+  </section>
+
+  <section class="project-card">
+    <h2>Evaluation</h2>
+    <p>
+      Model performance was evaluated using accuracy and a detailed classification
+      report to assess predictions on unseen test data.
+    </p>
+  </section>
+
+  <section class="project-card">
+    <h2>AWS SageMaker Integration</h2>
+    <ul>
+      <li>Configured AWS execution roles and SageMaker environment</li>
+      <li>Used SageMaker SDK for managed ML experimentation</li>
+      <li>Initialized SageMaker Linear Learner for binary classification</li>
+      <li>Stored trained model artifacts and outputs in Amazon S3</li>
+    </ul>
+  </section>
+
+  <section class="project-card">
+    <h2>Tech Stack</h2>
+    <p>
+      Python · AWS SageMaker · Amazon S3 · Boto3 · Pandas · Scikit-learn ·
+      Random Forest · Linear Learner
+    </p>
+  </section>
+
+  <section class="project-card">
+    <h2>What This Project Demonstrates</h2>
+    <ul>
+      <li>Hands-on experience with AWS SageMaker workflows</li>
+      <li>Cloud-based data handling and model training</li>
+      <li>End-to-end ML pipeline design</li>
+      <li>Feature engineering and preprocessing best practices</li>
+      <li>Applying ML models in a healthcare prediction context</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Anushka Sagar</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+/* =========================
+   GLOBAL STYLES
+   ========================= */
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f7f6f3;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  padding: 80px 40px;
+}
+
+/* =========================
+   ITALIAN NAME (ONLY)
+   ========================= */
+
+.italian-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.italian-name .greet {
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.navbar .logo {
+  font-weight: 600;
+}
+
+.navbar nav a {
+  margin-left: 22px;
+  font-weight: 500;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.btn {
+  padding: 12px 26px;
+  background: #111827;
+  color: #ffffff;
+  border-radius: 28px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.btn.outline {
+  background: transparent;
+  color: #111827;
+  border: 1px solid #111827;
+}
+
+.btn.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+
+.hero-new {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.hero-text {
+  max-width: 720px;
+}
+
+.hero-new h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: #374151;
+  margin-bottom: 22px;
+}
+
+/* Achievements under hero */
+.hero-achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+
+.hero-achievements li {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+/* Hero buttons */
+.hero-buttons .btn {
+  margin-right: 12px;
+}
+
+/* =========================
+   SNAPSHOT CARDS (HOME)
+   ========================= */
+
+.snapshot {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 60px 40px 80px;
+}
+
+.snapshot-card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 18px;
+}
+
+.snapshot-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* =========================
+   ABOUT PAGE
+   ========================= */
+
+.about-page {
+  max-width: 800px;
+  margin: auto;
+  padding: 80px 40px;
+  line-height: 1.8;
+}
+
+/* =========================
+   PROJECTS LIST PAGE
+   ========================= */
+
+.projects-page {
+  padding: 80px 40px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.project-box {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.project-box h3 {
+  margin-bottom: 10px;
+}
+
+.project-box span {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: 500;
+  color: #4f46e5;
+}
+
+/* =========================
+   PROJECT DETAIL PAGES
+   ========================= */
+
+.project-nav {
+  padding: 20px 40px;
+}
+
+.project-nav a {
+  font-weight: 500;
+  color: #4f46e5;
+}
+
+/* Hero */
+.project-hero {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 40px 40px;
+}
+
+.project-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+}
+
+.project-tagline {
+  font-size: 1.15rem;
+  color: #374151;
+  max-width: 700px;
+}
+
+.project-actions {
+  margin-top: 25px;
+}
+
+/* Content */
+.project-content {
+  max-width: 900px;
+  margin: auto;
+  padding: 0 40px 80px;
+}
+
+/* Cards */
+.project-card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 18px;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.project-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  border-left: 4px solid #4f46e5;
+  padding-left: 12px;
+}
+
+.project-card p,
+.project-card li {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.project-card ul {
+  padding-left: 20px;
+}
+
+/* =========================
+   SKILLS SECTION
+   ========================= */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.skill-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 14px;
+}
+
+.skill-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-card li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* =========================
+   ACHIEVEMENTS
+   ========================= */
+
+.achievements ul {
+  padding-left: 20px;
+}
+
+.achievements li {
+  margin-bottom: 22px;
+  line-height: 1.7;
+}
+
+.note {
+  display: block;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #e5e7eb;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 20px;
+  }
+
+  .italian-name {
+    font-size: 2.4rem;
+  }
+
+  .hero-new h2 {
+    font-size: 1.4rem;
+  }
+
+  .project-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .project-hero,
+  .project-content {
+    padding: 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

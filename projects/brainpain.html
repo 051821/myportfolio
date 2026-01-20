@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BrainPain Generator | Anushka Sagar</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+<!-- TOP NAV -->
+<header class="project-nav">
+  <a href="../projects.html">← Back to Projects</a>
+</header>
+
+<!-- HERO -->
+<section class="project-hero">
+  <h1>BrainPain Generator 😭→🧠</h1>
+  <p class="project-tagline">
+    A local, fully offline RAG-powered MCQ generator built with Streamlit and Ollama
+  </p>
+
+  <div class="project-actions">
+    <a href="https://github.com/051821/BrainPain-Generater"
+       target="_blank"
+       class="btn">
+      View GitHub
+    </a>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<main class="project-content">
+
+  <section class="project-card">
+    <h2>Overview</h2>
+    <p>
+      BrainPain Generator is a Retrieval-Augmented Generation (RAG) based quiz system
+      that generates challenging MCQs from any uploaded PDF. The application runs
+      fully offline and combines semantic retrieval, keyword matching, and constrained
+      LLM prompting to produce grounded, high-quality questions with explanations.
+    </p>
+  </section>
+
+  <section class="project-card">
+    <h2>How It Works</h2>
+    <ul>
+      <li>PDF is read and split into overlapping chunks</li>
+      <li>Chunks are embedded and indexed using FAISS</li>
+      <li>Hybrid search retrieves relevant context</li>
+      <li>Context is summarized to reduce token usage</li>
+      <li>LLM generates MCQs using strict RAG prompting</li>
+      <li>One-shot explanations generated for all questions</li>
+    </ul>
+  </section>
+
+  <section class="project-card">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Fully offline RAG pipeline using Ollama</li>
+      <li>Hybrid search (vector similarity + keyword matching)</li>
+      <li>Strict MCQ formatting with retry and fallback logic</li>
+      <li>One-line explanations generated in a single LLM call</li>
+      <li>Rule-based MCQ parsing with error tolerance</li>
+      <li>Intentionally fun and savage user interface</li>
+    </ul>
+  </section>
+
+  <section class="project-card">
+    <h2>Algorithms & Techniques</h2>
+    <ul>
+      <li>Recursive Character Text Splitting</li>
+      <li>Semantic embeddings using nomic-embed-text</li>
+      <li>FAISS Approximate Nearest Neighbor search</li>
+      <li>Hybrid retrieval to reduce hallucinations</li>
+      <li>LLM-driven context summarization</li>
+      <li>Constraint-based prompt engineering</li>
+      <li>Rule-based parsing and auto-repair mechanisms</li>
+    </ul>
+  </section>
+
+  <section class="project-card">
+    <h2>Tech Stack</h2>
+    <p>
+      Python · Streamlit · LangChain · Ollama · FAISS · PyMuPDF ·
+      nomic-embed-text · LLaMA / DeepSeek models
+    </p>
+  </section>
+
+  <section class="project-card">
+    <h2>What This Project Demonstrates</h2>
+    <ul>
+      <li>Strong understanding of RAG system design</li>
+      <li>Efficient LLM usage and token optimization</li>
+      <li>Hybrid retrieval strategies for grounded generation</li>
+      <li>Robust handling of LLM failures</li>
+      <li>End-to-end AI application development</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Anushka Sagar</p>
+</footer>
+
+</body>
+</html>

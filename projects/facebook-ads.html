@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Facebook Ads Intelligence System | Anushka Sagar</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+<!-- TOP NAV -->
+<header class="project-nav">
+  <a href="../projects.html">← Back to Projects</a>
+</header>
+
+<!-- HERO -->
+<section class="project-hero">
+  <h1>Facebook Ads Intelligence System</h1>
+  <p class="project-tagline">
+    Production-ready multi-agent AI system for automated Facebook Ads performance analysis
+  </p>
+
+  <div class="project-actions">
+    <a href="https://github.com/051821/Multiagent-Fb-ad-analysis"
+       target="_blank"
+       class="btn">
+      View GitHub
+    </a>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<main class="project-content">
+
+  <section class="project-card">
+    <h2>Overview</h2>
+    <p>
+      This project is a production-grade multi-agent AI system that analyzes Facebook Ads
+      performance similar to a human marketing analyst. It automatically diagnoses issues
+      such as ROAS or CTR drops and generates validated, actionable recommendations.
+    </p>
+  </section>
+
+  <section class="project-card">
+    <h2>Problem Statement</h2>
+    <p>
+      Manual ad performance analysis is time-consuming, inconsistent, and often subjective.
+      Marketing teams struggle to identify the real drivers behind performance drops and
+      convert raw metrics into actionable insights.
+    </p>
+  </section>
+
+  <section class="project-card">
+    <h2>Solution Architecture</h2>
+    <p>
+      I designed a multi-agent architecture where each agent performs a specialized role,
+      combining LLM-based reasoning with deterministic validation for reliability.
+    </p>
+
+    <ul>
+      <li><strong>Planner Agent:</strong> Builds the analysis strategy</li>
+      <li><strong>Data Agent:</strong> Validates data and detects drift</li>
+      <li><strong>Insight Agent:</strong> Generates hypotheses using LLMs</li>
+      <li><strong>Evaluation Agent:</strong> Verifies insights with metrics</li>
+      <li><strong>Creative Agent:</strong> Recommends creative improvements</li>
+    </ul>
+  </section>
+
+  <section class="project-card">
+    <h2>Key Technical Highlights</h2>
+    <ul>
+      <li>Robust JSON parsing with auto-repair for malformed LLM outputs</li>
+      <li>Retry logic with exponential backoff and fallback strategies</li>
+      <li>Schema validation and data drift detection</li>
+      <li>Deterministic test mode with full CI/CD pipeline</li>
+      <li>Structured logging, metrics, and confidence scoring</li>
+    </ul>
+  </section>
+
+  <section class="project-card">
+    <h2>Outputs Generated</h2>
+    <ul>
+      <li><strong>insights.json</strong> – Validated hypotheses with confidence scores</li>
+      <li><strong>creatives.json</strong> – Creative recommendations</li>
+      <li><strong>report.md</strong> – Executive summary with actions</li>
+    </ul>
+  </section>
+
+  <section class="project-card">
+    <h2>Tech Stack</h2>
+    <p>
+      Python 3.12 · LangChain · OpenAI / Ollama · Pandas · Loguru · PyTest · Ruff ·
+      GitHub Actions (CI/CD)
+    </p>
+  </section>
+
+  <section class="project-card">
+    <h2>What This Project Demonstrates</h2>
+    <ul>
+      <li>Multi-agent AI system design</li>
+      <li>Production-grade reliability & observability</li>
+      <li>LLM integration with validation</li>
+      <li>Software engineering best practices</li>
+      <li>Real business problem solving</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Anushka Sagar</p>
+</footer>
+
+</body>
+</html>
