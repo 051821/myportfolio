@@ -4,28 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BrainPain Generator | Anushka Sagar</title>
+
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
 
-<!-- TOP NAV -->
+<!-- BACKGROUND GLOW (SAME AS OTHER PROJECT) -->
+<div class="glow-bg">
+  <div class="blob purple"></div>
+  <div class="blob orange"></div>
+  <div class="blob blue"></div>
+</div>
+
+<!-- TOP NAV (SAME STRUCTURE) -->
 <header class="project-nav">
-  <a href="../projects.html">← Back to Projects</a>
+  <a href="../projects.html" class="back-link">← Back to Projects</a>
 </header>
 
 <!-- HERO -->
 <section class="project-hero">
-  <h1>BrainPain Generator 😭→🧠</h1>
-  <p class="project-tagline">
-    A local, fully offline RAG-powered MCQ generator built with Streamlit and Ollama
-  </p>
+  <div class="project-hero-layout">
 
-  <div class="project-actions">
-    <a href="https://github.com/051821/BrainPain-Generater"
-       target="_blank"
-       class="btn">
-      View GitHub
-    </a>
+    <!-- LEFT CONTENT -->
+    <div class="project-hero-main">
+      <h1>BrainPain Generator 😭→🧠</h1>
+
+      <p class="project-tagline">
+        A fully offline, RAG-powered MCQ generator that turns PDFs into
+        brutally challenging questions using local LLMs.
+      </p>
+
+      <a
+        href="https://github.com/051821/BrainPain-Generater"
+        target="_blank"
+        class="btn github-btn"
+      >
+        View GitHub
+      </a>
+    </div>
+
+    <!-- RIGHT SIDE PANEL (MATCHES ADS PROJECT STYLE) -->
+    <div class="project-side-panel">
+      <h4>System Highlights</h4>
+      <ul>
+        <li>📄 PDF → MCQ Pipeline</li>
+        <li>🧠 Local RAG Reasoning</li>
+        <li>🔍 Hybrid Retrieval</li>
+        <li>🧪 Offline & Private</li>
+        <li>😈 Savage Difficulty Mode</li>
+      </ul>
+
+      <div class="tech-tags">
+        <span>RAG</span>
+        <span>Ollama</span>
+        <span>FAISS</span>
+        <span>Streamlit</span>
+        <span>Python</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -36,20 +73,20 @@
     <h2>Overview</h2>
     <p>
       BrainPain Generator is a Retrieval-Augmented Generation (RAG) based quiz system
-      that generates challenging MCQs from any uploaded PDF. The application runs
-      fully offline and combines semantic retrieval, keyword matching, and constrained
-      LLM prompting to produce grounded, high-quality questions with explanations.
+      that generates challenging MCQs from uploaded PDFs. The application runs fully
+      offline and combines semantic retrieval, keyword matching, and constrained
+      prompting to produce grounded questions with explanations.
     </p>
   </section>
 
   <section class="project-card">
     <h2>How It Works</h2>
     <ul>
-      <li>PDF is read and split into overlapping chunks</li>
+      <li>PDF is parsed and split into overlapping chunks</li>
       <li>Chunks are embedded and indexed using FAISS</li>
-      <li>Hybrid search retrieves relevant context</li>
+      <li>Hybrid retrieval fetches relevant context</li>
       <li>Context is summarized to reduce token usage</li>
-      <li>LLM generates MCQs using strict RAG prompting</li>
+      <li>LLM generates MCQs with strict formatting rules</li>
       <li>One-shot explanations generated for all questions</li>
     </ul>
   </section>
@@ -58,24 +95,23 @@
     <h2>Key Features</h2>
     <ul>
       <li>Fully offline RAG pipeline using Ollama</li>
-      <li>Hybrid search (vector similarity + keyword matching)</li>
-      <li>Strict MCQ formatting with retry and fallback logic</li>
-      <li>One-line explanations generated in a single LLM call</li>
-      <li>Rule-based MCQ parsing with error tolerance</li>
-      <li>Intentionally fun and savage user interface</li>
+      <li>Hybrid search (vector + keyword)</li>
+      <li>Strict MCQ schema with retries & fallback</li>
+      <li>Single-call explanation generation</li>
+      <li>Rule-based parsing with auto-repair</li>
+      <li>Intentionally fun and brutal UX</li>
     </ul>
   </section>
 
   <section class="project-card">
     <h2>Algorithms & Techniques</h2>
     <ul>
-      <li>Recursive Character Text Splitting</li>
-      <li>Semantic embeddings using nomic-embed-text</li>
-      <li>FAISS Approximate Nearest Neighbor search</li>
+      <li>Recursive character text splitting</li>
+      <li>Semantic embeddings using <strong>nomic-embed-text</strong></li>
+      <li>FAISS approximate nearest neighbor search</li>
       <li>Hybrid retrieval to reduce hallucinations</li>
-      <li>LLM-driven context summarization</li>
       <li>Constraint-based prompt engineering</li>
-      <li>Rule-based parsing and auto-repair mechanisms</li>
+      <li>Rule-driven parsing and validation</li>
     </ul>
   </section>
 
@@ -83,7 +119,7 @@
     <h2>Tech Stack</h2>
     <p>
       Python · Streamlit · LangChain · Ollama · FAISS · PyMuPDF ·
-      nomic-embed-text · LLaMA / DeepSeek models
+      nomic-embed-text · LLaMA / DeepSeek
     </p>
   </section>
 
@@ -91,10 +127,10 @@
     <h2>What This Project Demonstrates</h2>
     <ul>
       <li>Strong understanding of RAG system design</li>
-      <li>Efficient LLM usage and token optimization</li>
-      <li>Hybrid retrieval strategies for grounded generation</li>
-      <li>Robust handling of LLM failures</li>
-      <li>End-to-end AI application development</li>
+      <li>Offline-first LLM application development</li>
+      <li>Hybrid retrieval strategies for grounding</li>
+      <li>Efficient LLM usage & token control</li>
+      <li>Production-style AI engineering practices</li>
     </ul>
   </section>
 
@@ -106,3 +142,5 @@
 
 </body>
 </html>
+
+

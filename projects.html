@@ -1,65 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects | Anushka Sagar</title>
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+<!-- BACKGROUND GLOW (same as index) -->
+<div class="glow-bg">
+  <div class="blob purple"></div>
+  <div class="blob orange"></div>
+  <div class="blob blue"></div>
+</div>
+
+<!-- NAVBAR -->
 <header class="navbar">
-  <h1>Anushka Sagar</h1>
+  <div class="logo">Anushka Sagar</div>
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="projects.html" class="active">Projects</a>
     <a href="resume.pdf" target="_blank">Resume</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<main class="projects-page">
+<!-- PROJECTS -->
+<section class="projects-page">
+<h3 class="section-title gradient-name">
+  Selected <span class="gradient-name">Projects</span>
+</h3>
 
-  <h2>Projects</h2>
+  <p class="hero-desc">
+    A collection of my work in Machine Learning, NLP, Multi-Agent Systems,
+    and MLOps focused on production-ready AI systems.
+  </p>
 
   <div class="projects-grid">
 
-    <a href="projects/facebook-ads.html" class="project-box">
+    <a href="projects/facebook-ads.html" class="project-card ">
       <h3>Facebook Ads Intelligence System</h3>
-      <p>Multi-agent AI system for automated ad performance analysis.</p>
-      <span>View Details →</span>
+      <p>Multi-agent AI system for automated Facebook Ads performance analysis.</p>
+      <span class="project-link">View Details →</span>
     </a>
 
-    <a href="projects/wearable-health.html" class="project-box">
+    <a href="projects/wearable-health.html" class="project-card">
       <h3>Wearable Health Monitoring System</h3>
-      <p>End-to-end ML + DevOps pipeline with CI/CD and monitoring.</p>
-      <span>View Details →</span>
+      <p>End-to-end ML + MLOps pipeline with CI/CD and monitoring.</p>
+      <span class="project-link">View Details →</span>
     </a>
 
-    <a href="projects/brainpain.html" class="project-box">
+    <a href="projects/brainpain.html" class="project-card">
       <h3>BrainPain Generator</h3>
       <p>Offline RAG-powered MCQ generator using Ollama.</p>
-      <span>View Details →</span>
+      <span class="project-link">View Details →</span>
     </a>
 
-    <a href="projects/ihf-rl.html" class="project-box">
-      <h3>Iterative Human Feedback (RL-inspired)</h3>
+    <a href="projects/ihf-rl.html" class="project-card">
+      <h3>Iterative Human Feedback (RL-Inspired)</h3>
       <p>Human-in-the-loop framework for generative model improvement.</p>
-      <span>View Details →</span>
+      <span class="project-link">View Details →</span>
     </a>
 
-    <a href="projects/text-summarization.html" class="project-box">
+    <a href="projects/text-summarization.html" class="project-card">
       <h3>Text Summarization (Genetic Algorithm)</h3>
-      <p>Evolutionary optimization for extractive summarization.</p>
-      <span>View Details →</span>
+      <p>Evolutionary optimization for extractive text summarization.</p>
+      <span class="project-link">View Details →</span>
     </a>
 
-    <a href="projects/sagemaker.html" class="project-box">
+    <a href="projects/sagemaker.html" class="project-card">
       <h3>AWS SageMaker ML Pipeline</h3>
-      <p>Cloud-based heart disease prediction workflow.</p>
-      <span>View Details →</span>
+      <p>Cloud-based end-to-end heart disease prediction workflow.</p>
+      <span class="project-link">View Details →</span>
     </a>
 
   </div>
-</main>
+</section>
+
+<footer>
+  © 2026 Anushka Sagar
+</footer>
 
 </body>
 </html>
+

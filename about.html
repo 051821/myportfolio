@@ -1,63 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Anushka Sagar</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
+<!-- AURORA BACKGROUND -->
+<div class="aurora-bg"></div>
+
+<!-- CURSOR TORCH -->
+<div class="cursor-glow"></div>
+
+<!-- NAVBAR -->
 <header class="navbar">
-  <h1>Anushka Sagar</h1>
+  <div class="logo">Anushka Sagar</div>
   <nav>
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
-    <a href="resume.pdf" target="_blank">Resume</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
+<!-- ABOUT PAGE -->
 <main class="about-page">
 
-  <h2>About Me</h2>
+  <section class="about-hero">
+    <h1 class="section-title gradient-name">
+      About <span class="gradient-name">Me</span>
+    </h1>
 
-  <p>
-    I am an aspiring AI and Machine Learning Engineer with a basic and practical
-    understanding of how data is used to build intelligent systems. I am currently
-    pursuing a Bachelor of Technology in Computer Science and Engineering, where I am
-    learning core subjects such as programming, data structures, machine learning,
-    and software development.
-  </p>
+    <p class="about-intro">
+      Aspiring AI & Machine Learning Engineer focused on building
+      intelligent, research-driven, and production-ready systems.
+    </p>
+  </section>
 
-  <p>
-    I have hands-on experience working with Python and C++, and I use libraries like
-    NumPy, Pandas, and Scikit-learn for data analysis and machine learning tasks.
-    I have worked on projects involving classification, clustering, and prediction,
-    which helped me understand how models are trained, tested, and improved.
-  </p>
+  <section class="about-content">
+    <p>
+      I am an aspiring AI and Machine Learning Engineer with a practical
+      understanding of how data is transformed into intelligent systems.
+      I am currently pursuing a Bachelor of Technology in Computer Science
+      and Engineering.
+    </p>
 
-  <p>
-    I am also learning about Natural Language Processing and Large Language Models.
-    I have built simple applications using tools like LangChain and FAISS, where
-    models answer questions or generate content using external data. These projects
-    helped me understand prompt design, retrieval, and response evaluation in a
-    practical way.
-  </p>
+    <p>
+      I have hands-on experience with Python and C++, using NumPy, Pandas,
+      and Scikit-learn for machine learning workflows such as classification,
+      clustering, and prediction.
+    </p>
 
-  <p>
-    Along with model building, I am interested in how applications are deployed and
-    maintained. I have basic experience with Docker and CI/CD tools like Jenkins,
-    which helped me understand how machine learning projects move from local
-    development to real-world use.
-  </p>
+    <p>
+      I am deeply interested in NLP and Large Language Models and have built
+      projects using LangChain and FAISS, exploring RAG pipelines and prompt
+      engineering.
+    </p>
 
-  <p>
-    Through my projects and coursework, I have developed a structured approach to
-    problem-solving. I focus on understanding the problem, breaking it into smaller
-    steps, testing solutions, and improving based on results. I am eager to continue
-    learning, gain industry experience, and grow into a skilled AI and ML engineer.
-  </p>
+    <p>
+      Alongside ML, I enjoy MLOps and deployment using Docker and CI/CD,
+      learning how systems move from experimentation to production.
+    </p>
+  </section>
 
 </main>
 
+<!-- 🤖 INTERACTIVE ROBOT (SINGLE SOURCE OF TRUTH) -->
+<div id="robotAgent" class="robot-wrapper robot walking">
+  <svg class="robot-svg" viewBox="0 0 120 160" width="80">
+    <!-- Head -->
+    <rect x="25" y="0" width="70" height="50" rx="14" class="robot-head"/>
+    <circle cx="50" cy="25" r="6" class="robot-eye"/>
+    <circle cx="70" cy="25" r="6" class="robot-eye"/>
+
+    <!-- Body -->
+    <rect x="35" y="50" width="50" height="50" rx="10" class="robot-body"/>
+
+    <!-- Arms -->
+    <rect x="15" y="55" width="20" height="10" rx="5" class="robot-arm left"/>
+    <rect x="85" y="55" width="20" height="10" rx="5" class="robot-arm right"/>
+
+    <!-- Legs -->
+    <rect x="45" y="100" width="12" height="35" rx="6" class="robot-leg left"/>
+    <rect x="63" y="100" width="12" height="35" rx="6" class="robot-leg right"/>
+  </svg>
+</div>
+
+<!-- ✅ SCRIPT (SAFE + INTERACTIVE) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const robot = document.getElementById("robotAgent");
+  if (!robot) {
+    console.error("Robot not found");
+    return;
+  }
+
+  let x = window.innerWidth * 0.3;
+  let y = -120;                 // START ABOVE SCREEN
+  let ground = window.innerHeight - 140;
+  let direction = 1;
+  let state = "falling";
+
+  robot.style.transform = `translate(${x}px, ${y}px)`;
+
+
+
+  function setState(newState) {
+    state = newState;
+    robot.className = `robot-wrapper robot ${state}`;
+  }
+
+  /* FALL FROM TOP */
+  function fallFromTop() {
+    y += 6;
+    robot.style.transform = `translate(${x}px, ${y}px)`;
+
+    if (y < window.innerHeight - 140) {
+      requestAnimationFrame(fallFromTop);
+    } else {
+      y = window.innerHeight - 140;
+      setState("walking");
+      walk();
+    }
+  }
+
+  /* WALK LEFT ↔ RIGHT */
+  function walk() {
+    if (state !== "walking") return;
+
+    x += direction * 0.6;
+    robot.style.transform = `translate(${x}px, ${y}px) scaleX(${direction})`;
+
+    if (x > window.innerWidth - 120 || x < 20) {
+      direction *= -1;
+    }
+
+    requestAnimationFrame(walk);
+  }
+
+  /* THINK WHEN CURSOR IS NEAR */
+  document.addEventListener("mousemove", (e) => {
+    const rect = robot.getBoundingClientRect();
+    const dist = Math.abs(e.clientX - rect.left);
+
+    if (dist < 120 && state === "walking") {
+      setState("thinking");
+      setTimeout(() => setState("walking"), 800);
+    }
+  });
+
+  /* JUMP ON CLICK NEAR */
+  document.addEventListener("click", (e) => {
+    const rect = robot.getBoundingClientRect();
+    const dist = Math.abs(e.clientX - rect.left);
+
+    if (dist < 150) {
+      robot.classList.add("jump");
+      setTimeout(() => robot.classList.remove("jump"), 500);
+    }
+  });
+
+  /* START */
+  setState("falling");
+  fallFromTop();
+
+});
+</script>
+
 </body>
 </html>
+

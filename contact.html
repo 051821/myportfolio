@@ -3,69 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>Contact | Anushka Sagar</title>
 
-  <!-- Google Font for Italian Name -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div class="aurora-bg"></div>
+
+<!-- AI BACKGROUND (same as index.html) -->
+<div class="ai-bg">
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
 
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">Anushka Sagar</div>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="projects.html" class="nav-link">Projects</a>
     <a href="resume.pdf" target="_blank">Resume</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
   </nav>
 </header>
 
-<!-- CONTACT SECTION -->
-<section class="about-page">
-  
-  <h1 class="italian-name">
-    <span class="greet">Get in</span> Touch
-  </h1>
+<!-- CONTACT LAYOUT -->
+<section class="contact-hero">
 
-  <p style="max-width: 600px; margin-bottom: 30px;">
-    I’m always open to discussing AI/ML projects, research collaborations,
-    internships, or full-time opportunities.  
-    Feel free to reach out through any of the channels below.
-  </p>
+  <!-- LEFT: CURVED TEXT -->
+  <div class="contact-curve">
+    <svg viewBox="0 0 600 600">
+      <defs>
+        <linearGradient id="contactGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0">
+          <stop offset="0%" stop-color="#6366f1"/>
+          <stop offset="100%" stop-color="#22d3ee"/>
+        </linearGradient>
 
-  <ul style="list-style: none; padding: 0; font-size: 1.05rem;">
-    <li style="margin-bottom: 12px;">
-      📧 <strong>Email:</strong>
-      <a href="mailto:hardikharsh2005@gmail.com">
+        <path id="curve"
+          d="M 300,300
+             m -200,0
+             a 200,200 0 1,1 400,0
+             a 200,200 0 1,1 -400,0" />
+      </defs>
+
+      <text width="600">
+        <textPath xlink:href="#curve">
+          GET IN TOUCH • GET IN TOUCH • GET IN TOUCH •
+        </textPath>
+      </text>
+    </svg>
+
+    <p class="contact-subtext">
+      Get in touch and<br />I’d be happy to help.
+    </p>
+  </div>
+
+  <!-- RIGHT: CONTACT INFO -->
+  <div class="contact-info">
+  <h3>Contact Info</h3>
+
+  <div class="contact-item">
+    <span class="icon">📧</span>
+    <div>
+      <span class="label">Email</span>
+      <a href="mailto:anushkasagar302@gmail.com">
         anushkasagar302@gmail.com
       </a>
-    </li>
+    </div>
+  </div>
 
-    <li style="margin-bottom: 12px;">
-      💼 <strong>LinkedIn:</strong>
+  <div class="contact-item">
+    <span class="icon">💼</span>
+    <div>
+      <span class="label">LinkedIn</span>
       <a href="https://www.linkedin.com/in/anushkasagar9210/" target="_blank">
         linkedin.com/in/anushkasagar9210
       </a>
-    </li>
+    </div>
+  </div>
 
-    <li style="margin-bottom: 12px;">
-      🧠 <strong>GitHub:</strong>
+  <div class="contact-item">
+    <span class="icon">🧠</span>
+    <div>
+      <span class="label">GitHub</span>
       <a href="https://github.com/051821" target="_blank">
         github.com/051821
       </a>
-    </li>
-  </ul>
+    </div>
+  </div>
+</div>
+
 
 </section>
-
 <!-- FOOTER -->
 <footer>
   <p>© 2026 Anushka Sagar</p>
 </footer>
-
+<div class="cursor-glow"></div>
+<script src="script.js"></script>
 </body>
 </html>

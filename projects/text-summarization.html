@@ -4,28 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Text Summarization using Genetic Algorithm | Anushka Sagar</title>
+
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
 
+<!-- BACKGROUND GLOW -->
+<div class="glow-bg">
+  <div class="blob purple"></div>
+  <div class="blob orange"></div>
+  <div class="blob blue"></div>
+</div>
+
 <!-- TOP NAV -->
 <header class="project-nav">
-  <a href="../projects.html">← Back to Projects</a>
+  <a href="../projects.html" class="back-link">← Back to Projects</a>
 </header>
 
 <!-- HERO -->
 <section class="project-hero">
-  <h1>Text Summarization using Genetic Algorithm</h1>
-  <p class="project-tagline">
-    Extractive text summarization using evolutionary optimization techniques
-  </p>
+  <div class="project-hero-layout">
 
-  <div class="project-actions">
-    <a href="https://github.com/051821/Text-Summarization"
-       target="_blank"
-       class="btn">
-      View GitHub
-    </a>
+    <!-- LEFT -->
+    <div class="project-hero-main">
+      <h1>Text Summarization using Genetic Algorithm</h1>
+
+      <p class="project-tagline">
+        An extractive text summarization system that applies evolutionary
+        optimization techniques to generate concise and informative summaries
+        from large documents.
+      </p>
+
+      <a
+        href="https://github.com/051821/Text-Summarization"
+        target="_blank"
+        class="btn github-btn"
+      >
+        View GitHub
+      </a>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="project-side-panel">
+      <h4>Algorithm Focus</h4>
+      <ul>
+        <li>🧬 Genetic Algorithm</li>
+        <li>📄 Extractive Summarization</li>
+        <li>⚙️ Optimization via Evolution</li>
+        <li>🔁 Selection & Mutation</li>
+        <li>📉 Text Compression</li>
+      </ul>
+
+      <div class="tech-tags">
+        <span>Genetic Algorithm</span>
+        <span>NLP</span>
+        <span>Optimization</span>
+        <span>Python</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -35,51 +72,69 @@
   <section class="project-card">
     <h2>Overview</h2>
     <p>
-      This project implements an extractive text summarization system using a
-      Genetic Algorithm (GA). The goal is to automatically generate a concise
-      summary from a large input document by selecting the most informative words
-      through evolutionary optimization.
+      This project implements an <strong>extractive text summarization system</strong>
+      using a Genetic Algorithm (GA). Instead of relying on deep learning models,
+      the system treats summarization as an <strong>optimization problem</strong>,
+      where the goal is to select the most informative subset of words from the
+      original document.
+    </p>
+
+    <p>
+      By evolving candidate summaries over multiple generations, the algorithm
+      progressively improves summary quality while reducing overall text length.
     </p>
   </section>
 
   <section class="project-card">
     <h2>Problem Statement</h2>
     <p>
-      Large text documents are time-consuming to read and analyze. Traditional
-      summarization techniques often struggle to balance information retention
-      and brevity.
+      Large textual documents are difficult and time-consuming to read.
+      Traditional summarization approaches often struggle to balance
+      <strong>information retention</strong> with <strong>brevity</strong>.
+    </p>
+
+    <p>
+      The challenge addressed in this project is to automatically generate
+      compact summaries that preserve key information using an algorithmic,
+      optimization-driven approach.
     </p>
   </section>
 
   <section class="project-card">
-    <h2>Approach</h2>
+    <h2>Methodology & Approach</h2>
     <ul>
-      <li>Preprocess and tokenize input text</li>
+      <li>Preprocess and tokenize the input document</li>
       <li>Represent candidate summaries as binary chromosomes</li>
-      <li>Initialize a population of summaries</li>
-      <li>Evaluate fitness using word overlap</li>
-      <li>Apply selection, crossover, and mutation</li>
-      <li>Evolve summaries across generations</li>
+      <li>Initialize a population of random summaries</li>
+      <li>Evaluate fitness based on word relevance and coverage</li>
+      <li>Apply selection, crossover, and mutation operators</li>
+      <li>Evolve the population across multiple generations</li>
     </ul>
   </section>
 
   <section class="project-card">
     <h2>Genetic Algorithm Design</h2>
     <ul>
-      <li><strong>Encoding:</strong> Binary inclusion of words</li>
-      <li><strong>Selection:</strong> Roulette wheel selection</li>
-      <li><strong>Crossover:</strong> Single-point crossover</li>
-      <li><strong>Mutation:</strong> Bit-flip mutation</li>
-      <li><strong>Fitness:</strong> Word overlap-based relevance scoring</li>
+      <li><strong>Encoding:</strong> Binary representation indicating word inclusion</li>
+      <li><strong>Selection:</strong> Roulette wheel selection based on fitness</li>
+      <li><strong>Crossover:</strong> Single-point crossover to combine solutions</li>
+      <li><strong>Mutation:</strong> Bit-flip mutation to introduce diversity</li>
+      <li><strong>Fitness Function:</strong> Word overlap-based relevance scoring</li>
     </ul>
+
+    <p>
+      This design allows the algorithm to efficiently explore the search space
+      of possible summaries while avoiding premature convergence.
+    </p>
   </section>
 
   <section class="project-card">
-    <h2>Results</h2>
+    <h2>Results & Observations</h2>
     <p>
-      The system successfully reduced the original text length while preserving
-      important content, demonstrating effective compression through evolutionary
-      optimization.
+      The system successfully reduced the original document length while
+      preserving important content. Across generations, summaries became more
+      concise and informative, demonstrating the effectiveness of evolutionary
+      optimization for extractive summarization.
     </p>
   </section>
 
@@ -93,10 +148,11 @@
   <section class="project-card">
     <h2>What This Project Demonstrates</h2>
     <ul>
-      <li>Understanding of evolutionary algorithms</li>
-      <li>Application of Genetic Algorithms to NLP</li>
-      <li>Algorithmic thinking and optimization</li>
-      <li>Text preprocessing and evaluation techniques</li>
+      <li>Strong understanding of evolutionary algorithms</li>
+      <li>Application of Genetic Algorithms to NLP problems</li>
+      <li>Algorithmic thinking and optimization strategies</li>
+      <li>Text preprocessing and feature evaluation techniques</li>
+      <li>Ability to solve problems without heavy deep learning models</li>
     </ul>
   </section>
 

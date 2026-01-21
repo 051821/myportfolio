@@ -4,28 +4,66 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wearable Health Monitoring System | Anushka Sagar</title>
+
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
 
+<!-- BACKGROUND GLOW -->
+<div class="glow-bg">
+  <div class="blob purple"></div>
+  <div class="blob orange"></div>
+  <div class="blob blue"></div>
+</div>
+
 <!-- TOP NAV -->
 <header class="project-nav">
-  <a href="../projects.html">← Back to Projects</a>
+  <a href="../projects.html" class="back-link">← Back to Projects</a>
 </header>
 
 <!-- HERO -->
 <section class="project-hero">
-  <h1>Wearable Health Monitoring & Health Score Prediction</h1>
-  <p class="project-tagline">
-    End-to-end ML + MLOps system for real-time health score prediction using wearable data
-  </p>
+  <div class="project-hero-layout">
 
-  <div class="project-actions">
-    <a href="https://github.com/051821/wearable-health-monitor"
-       target="_blank"
-       class="btn">
-      View GitHub
-    </a>
+    <!-- LEFT -->
+    <div class="project-hero-main">
+      <h1>Wearable Health Monitoring & Health Score Prediction</h1>
+
+      <p class="project-tagline">
+        A production-style ML + MLOps system that predicts real-time health scores
+        from wearable sensor data using deep learning, automated CI/CD,
+        infrastructure-as-code, and continuous monitoring.
+      </p>
+
+      <a
+        href="https://github.com/051821/wearable-health-monitor"
+        target="_blank"
+        class="btn github-btn"
+      >
+        View GitHub
+      </a>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="project-side-panel">
+      <h4>System Highlights</h4>
+      <ul>
+        <li>⌚ Wearable Sensor Data</li>
+        <li>🧠 Deep Learning Regression</li>
+        <li>⚙️ CI/CD Automation</li>
+        <li>🐳 Containerized Deployment</li>
+        <li>📊 Continuous Monitoring</li>
+      </ul>
+
+      <div class="tech-tags">
+        <span>MLOps</span>
+        <span>TensorFlow</span>
+        <span>Docker</span>
+        <span>Jenkins</span>
+        <span>Terraform</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -35,33 +73,43 @@
   <section class="project-card">
     <h2>Overview</h2>
     <p>
-      This project implements a production-style wearable health monitoring system
-      that predicts an individual’s daily health score using sensor data from wearable
-      devices. The system combines deep learning, automated CI/CD, infrastructure
-      provisioning, configuration management, and continuous monitoring.
+      This project implements a <strong>production-ready wearable health monitoring
+      system</strong> that predicts a user’s daily health score using multivariate
+      sensor data collected from wearable devices.
+    </p>
+
+    <p>
+      Beyond model development, the project focuses heavily on
+      <strong>automation, deployment, and monitoring</strong>, showcasing a complete
+      ML lifecycle aligned with real-world MLOps practices.
     </p>
   </section>
 
   <section class="project-card">
     <h2>Problem Statement</h2>
     <p>
-      Wearable devices generate large volumes of multivariate sensor data such as
-      heart rate, sleep patterns, activity levels, and stress indicators. Converting
-      this raw data into meaningful health insights requires scalable ML pipelines
-      and reliable deployment infrastructure.
+      Wearable devices continuously generate large volumes of heterogeneous sensor
+      data, including heart rate, sleep duration, activity levels, and stress indicators.
+    </p>
+
+    <p>
+      Transforming this raw data into actionable health insights requires
+      scalable preprocessing pipelines, robust predictive models,
+      and reliable production infrastructure.
     </p>
   </section>
 
   <section class="project-card">
-    <h2>System Workflow</h2>
+    <h2>End-to-End System Workflow</h2>
     <ul>
-      <li>Collect and preprocess wearable sensor data</li>
+      <li>Ingest and preprocess wearable sensor data</li>
+      <li>Normalize features and prepare training datasets</li>
       <li>Train a deep learning regression model for health score prediction</li>
-      <li>Serve predictions via an interactive Streamlit application</li>
+      <li>Serve predictions through an interactive Streamlit interface</li>
       <li>Containerize the application using Docker</li>
       <li>Automate training and deployment with Jenkins</li>
       <li>Provision infrastructure using Terraform</li>
-      <li>Configure systems with Puppet</li>
+      <li>Manage configuration using Puppet</li>
       <li>Continuously monitor system health using Nagios</li>
     </ul>
   </section>
@@ -69,12 +117,17 @@
   <section class="project-card">
     <h2>Machine Learning Pipeline</h2>
     <ul>
-      <li>Data normalization using StandardScaler</li>
-      <li>Deep learning regression model built with TensorFlow/Keras</li>
-      <li>Model export in both Keras and ONNX formats</li>
-      <li>Fast inference using ONNX runtime</li>
-      <li>Achieved an R² score of approximately 0.95</li>
+      <li>Feature scaling using StandardScaler</li>
+      <li>Deep learning regression model built with TensorFlow / Keras</li>
+      <li>Optimized inference through ONNX model export</li>
+      <li>Fast prediction using ONNX Runtime</li>
+      <li>Achieved an R² score of approximately <strong>0.95</strong></li>
     </ul>
+
+    <p>
+      The model design balances predictive accuracy with inference efficiency,
+      making it suitable for near real-time health monitoring.
+    </p>
   </section>
 
   <section class="project-card">
@@ -82,19 +135,19 @@
     <ul>
       <li>CI/CD pipeline using Jenkins for automated builds and deployments</li>
       <li>Infrastructure provisioning using Terraform (IaC)</li>
-      <li>Configuration management using Puppet on Windows agents</li>
-      <li>Containerized deployment using Docker</li>
-      <li>Automated health checks and monitoring</li>
+      <li>Configuration management with Puppet on Windows agents</li>
+      <li>Containerized application deployment using Docker</li>
+      <li>Automated testing and health checks</li>
     </ul>
   </section>
 
   <section class="project-card">
     <h2>Monitoring & Observability</h2>
     <ul>
-      <li>Application uptime monitoring on Streamlit port (8501)</li>
-      <li>CPU load monitoring of the host system</li>
-      <li>Host availability checks</li>
-      <li>Alerting on service or resource failures</li>
+      <li>Application uptime monitoring on Streamlit service (port 8501)</li>
+      <li>CPU load and system resource monitoring</li>
+      <li>Host availability and service health checks</li>
+      <li>Alerting on failures or performance degradation</li>
     </ul>
   </section>
 
@@ -109,11 +162,11 @@
   <section class="project-card">
     <h2>What This Project Demonstrates</h2>
     <ul>
-      <li>End-to-end ML system design</li>
-      <li>Integration of ML with DevOps & MLOps practices</li>
-      <li>Production-ready deployment and monitoring</li>
-      <li>Handling real-world sensor data pipelines</li>
-      <li>Applied ML in a healthcare context</li>
+      <li>End-to-end ML system design and deployment</li>
+      <li>Practical integration of ML with DevOps & MLOps tools</li>
+      <li>Production-ready monitoring and automation</li>
+      <li>Handling real-world wearable sensor data pipelines</li>
+      <li>Applied machine learning in a healthcare context</li>
     </ul>
   </section>
 

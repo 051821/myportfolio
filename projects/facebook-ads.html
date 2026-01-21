@@ -4,88 +4,159 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Facebook Ads Intelligence System | Anushka Sagar</title>
+
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
 
+<!-- BACKGROUND GLOW -->
+<div class="glow-bg">
+  <div class="blob purple"></div>
+  <div class="blob orange"></div>
+  <div class="blob blue"></div>
+</div>
+
 <!-- TOP NAV -->
 <header class="project-nav">
-  <a href="../projects.html">← Back to Projects</a>
+  <a href="file:///C:/portfolio/projects.html" class="back-link">← Back to Projects</a>
 </header>
 
 <!-- HERO -->
 <section class="project-hero">
-  <h1>Facebook Ads Intelligence System</h1>
-  <p class="project-tagline">
-    Production-ready multi-agent AI system for automated Facebook Ads performance analysis
-  </p>
+  <div class="project-hero-layout">
+    
+    <div class="project-hero-main">
+      <h1>Facebook Ads Intelligence System</h1>
+      <p class="project-tagline">
+        A production-grade, multi-agent AI system that analyzes Facebook Ads performance,
+        diagnoses metric drops, and generates validated, data-backed recommendations —
+        similar to how a human marketing analyst operates.
+      </p>
 
-  <div class="project-actions">
-    <a href="https://github.com/051821/Multiagent-Fb-ad-analysis"
-       target="_blank"
-       class="btn">
-      View GitHub
-    </a>
+      <a href="https://github.com/051821/Multiagent-Fb-ad-analysis"
+         target="_blank"
+         class="btn github-btn">
+        View GitHub
+      </a>
+    </div>
+
+    <div class="project-side-panel">
+      <h4>System Capabilities</h4>
+      <ul>
+        <li>🧠 Multi-Agent Reasoning</li>
+        <li>📊 Metric Anomaly Detection</li>
+        <li>✅ Deterministic Validation</li>
+        <li>🧪 CI-Ready Test Mode</li>
+        <li>📈 Explainable Insights</li>
+      </ul>
+
+      <div class="tech-tags">
+        <span>LangChain</span>
+        <span>LLMs</span>
+        <span>Python</span>
+        <span>MLOps</span>
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 <!-- CONTENT -->
 <main class="project-content">
 
+  <!-- OVERVIEW -->
   <section class="project-card">
     <h2>Overview</h2>
     <p>
-      This project is a production-grade multi-agent AI system that analyzes Facebook Ads
-      performance similar to a human marketing analyst. It automatically diagnoses issues
-      such as ROAS or CTR drops and generates validated, actionable recommendations.
+      The Facebook Ads Intelligence System is designed to automate performance analysis
+      for digital marketing campaigns using a <strong>multi-agent AI architecture</strong>.
+      Instead of relying on manual inspection of dashboards, the system ingests ad metrics,
+      detects anomalies such as ROAS or CTR drops, and produces structured, explainable insights.
+    </p>
+
+    <p>
+      Each insight is <strong>validated using deterministic checks</strong> to reduce hallucinations
+      and ensure recommendations are grounded in real data — making the system suitable
+      for production use.
     </p>
   </section>
 
+  <!-- PROBLEM -->
   <section class="project-card">
     <h2>Problem Statement</h2>
     <p>
-      Manual ad performance analysis is time-consuming, inconsistent, and often subjective.
-      Marketing teams struggle to identify the real drivers behind performance drops and
-      convert raw metrics into actionable insights.
+      Marketing teams spend significant time manually analyzing Facebook Ads dashboards
+      to understand why performance changes occur. This process is:
+    </p>
+
+    <ul>
+      <li>Time-consuming and repetitive</li>
+      <li>Highly subjective and analyst-dependent</li>
+      <li>Prone to missing hidden correlations</li>
+      <li>Difficult to standardize across teams</li>
+    </ul>
+
+    <p>
+      The goal of this project was to build an AI system that can
+      <strong>replicate and standardize analyst reasoning</strong>
+      while maintaining reliability and explainability.
     </p>
   </section>
 
+  <!-- ARCHITECTURE -->
   <section class="project-card">
     <h2>Solution Architecture</h2>
     <p>
-      I designed a multi-agent architecture where each agent performs a specialized role,
-      combining LLM-based reasoning with deterministic validation for reliability.
+      I designed a modular multi-agent system where each agent is responsible for a
+      well-defined task in the analysis pipeline. This separation of concerns improves
+      scalability, interpretability, and fault tolerance.
     </p>
 
     <ul>
-      <li><strong>Planner Agent:</strong> Builds the analysis strategy</li>
-      <li><strong>Data Agent:</strong> Validates data and detects drift</li>
-      <li><strong>Insight Agent:</strong> Generates hypotheses using LLMs</li>
-      <li><strong>Evaluation Agent:</strong> Verifies insights with metrics</li>
-      <li><strong>Creative Agent:</strong> Recommends creative improvements</li>
+      <li>
+        <strong>Planner Agent</strong> — Determines the analysis strategy based on available data
+      </li>
+      <li>
+        <strong>Data Agent</strong> — Performs schema validation, sanity checks, and data drift detection
+      </li>
+      <li>
+        <strong>Insight Agent</strong> — Uses LLM reasoning to generate hypotheses explaining metric changes
+      </li>
+      <li>
+        <strong>Evaluation Agent</strong> — Validates hypotheses using before–after numerical comparisons
+      </li>
+      <li>
+        <strong>Creative Agent</strong> — Suggests creative or targeting optimizations
+      </li>
     </ul>
   </section>
 
+  <!-- TECH HIGHLIGHTS -->
   <section class="project-card">
     <h2>Key Technical Highlights</h2>
     <ul>
-      <li>Robust JSON parsing with auto-repair for malformed LLM outputs</li>
-      <li>Retry logic with exponential backoff and fallback strategies</li>
-      <li>Schema validation and data drift detection</li>
-      <li>Deterministic test mode with full CI/CD pipeline</li>
+      <li>LLM output validation with schema enforcement and auto-repair</li>
+      <li>Retry logic with exponential backoff for API robustness</li>
+      <li>Data drift detection to prevent misleading insights</li>
+      <li>Deterministic evaluation mode for CI/CD testing</li>
       <li>Structured logging, metrics, and confidence scoring</li>
     </ul>
   </section>
 
+  <!-- OUTPUTS -->
   <section class="project-card">
     <h2>Outputs Generated</h2>
+    <p>The system produces machine-readable and human-readable outputs:</p>
+
     <ul>
-      <li><strong>insights.json</strong> – Validated hypotheses with confidence scores</li>
-      <li><strong>creatives.json</strong> – Creative recommendations</li>
-      <li><strong>report.md</strong> – Executive summary with actions</li>
+      <li><strong>insights.json</strong> — Validated insight hypotheses with confidence scores</li>
+      <li><strong>creatives.json</strong> — Creative and targeting recommendations</li>
+      <li><strong>report.md</strong> — Executive summary with actionable steps</li>
     </ul>
   </section>
 
+  <!-- TECH STACK -->
   <section class="project-card">
     <h2>Tech Stack</h2>
     <p>
@@ -94,14 +165,15 @@
     </p>
   </section>
 
+  <!-- TAKEAWAYS -->
   <section class="project-card">
     <h2>What This Project Demonstrates</h2>
     <ul>
-      <li>Multi-agent AI system design</li>
-      <li>Production-grade reliability & observability</li>
-      <li>LLM integration with validation</li>
-      <li>Software engineering best practices</li>
-      <li>Real business problem solving</li>
+      <li>Design and orchestration of multi-agent AI systems</li>
+      <li>Bridging LLM reasoning with deterministic validation</li>
+      <li>Production-grade AI engineering practices</li>
+      <li>Real-world business problem solving using AI</li>
+      <li>Explainable and reliable AI system design</li>
     </ul>
   </section>
 
