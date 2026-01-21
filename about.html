@@ -69,107 +69,90 @@
 </main>
 
 <!-- 🤖 INTERACTIVE ROBOT (SINGLE SOURCE OF TRUTH) -->
-<div id="robotAgent" class="robot-wrapper robot walking">
-  <svg class="robot-svg" viewBox="0 0 120 160" width="80">
-    <!-- Head -->
+<!-- 🤖 ROBOT -->
+<div id="robotAgent" class="robot-wrapper">
+  <svg class="robot" viewBox="0 0 120 160" width="80">
     <rect x="25" y="0" width="70" height="50" rx="14" class="robot-head"/>
     <circle cx="50" cy="25" r="6" class="robot-eye"/>
     <circle cx="70" cy="25" r="6" class="robot-eye"/>
 
-    <!-- Body -->
     <rect x="35" y="50" width="50" height="50" rx="10" class="robot-body"/>
 
-    <!-- Arms -->
     <rect x="15" y="55" width="20" height="10" rx="5" class="robot-arm left"/>
     <rect x="85" y="55" width="20" height="10" rx="5" class="robot-arm right"/>
 
-    <!-- Legs -->
     <rect x="45" y="100" width="12" height="35" rx="6" class="robot-leg left"/>
     <rect x="63" y="100" width="12" height="35" rx="6" class="robot-leg right"/>
   </svg>
 </div>
 
+
 <!-- ✅ SCRIPT (SAFE + INTERACTIVE) -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
   const robot = document.getElementById("robotAgent");
-  if (!robot) {
-    console.error("Robot not found");
-    return;
-  }
+  if (!robot) return;
 
   let x = window.innerWidth * 0.3;
-  let y = -120;                 // START ABOVE SCREEN
-  let ground = window.innerHeight - 140;
-  let direction = 1;
+  let y = -120; // start above screen
+  const ground = window.innerHeight - 140;
+  let dir = 1;
   let state = "falling";
 
-  robot.style.transform = `translate(${x}px, ${y}px)`;
-
-
-
-  function setState(newState) {
-    state = newState;
-    robot.className = `robot-wrapper robot ${state}`;
+  function update() {
+    robot.style.transform = `translate(${x}px, ${y}px) scaleX(${dir})`;
   }
 
-  /* FALL FROM TOP */
-  function fallFromTop() {
+  function fall() {
     y += 6;
-    robot.style.transform = `translate(${x}px, ${y}px)`;
-
-    if (y < window.innerHeight - 140) {
-      requestAnimationFrame(fallFromTop);
+    update();
+    if (y < ground) {
+      requestAnimationFrame(fall);
     } else {
-      y = window.innerHeight - 140;
-      setState("walking");
+      y = ground;
+      state = "walking";
+      robot.classList.add("walking");
       walk();
     }
   }
 
-  /* WALK LEFT ↔ RIGHT */
   function walk() {
     if (state !== "walking") return;
-
-    x += direction * 0.6;
-    robot.style.transform = `translate(${x}px, ${y}px) scaleX(${direction})`;
-
-    if (x > window.innerWidth - 120 || x < 20) {
-      direction *= -1;
-    }
-
+    x += dir * 0.6;
+    if (x < 20 || x > window.innerWidth - 120) dir *= -1;
+    update();
     requestAnimationFrame(walk);
   }
 
-  /* THINK WHEN CURSOR IS NEAR */
+  // Hover reaction
   document.addEventListener("mousemove", (e) => {
-    const rect = robot.getBoundingClientRect();
-    const dist = Math.abs(e.clientX - rect.left);
-
-    if (dist < 120 && state === "walking") {
-      setState("thinking");
-      setTimeout(() => setState("walking"), 800);
+    if (state !== "walking") return;
+    const r = robot.getBoundingClientRect();
+    if (Math.abs(e.clientX - r.left) < 120) {
+      state = "paused";
+      robot.classList.remove("walking");
+      setTimeout(() => {
+        state = "walking";
+        robot.classList.add("walking");
+        walk();
+      }, 700);
     }
   });
 
-  /* JUMP ON CLICK NEAR */
+  // Jump on click near
   document.addEventListener("click", (e) => {
-    const rect = robot.getBoundingClientRect();
-    const dist = Math.abs(e.clientX - rect.left);
-
-    if (dist < 150) {
+    const r = robot.getBoundingClientRect();
+    if (Math.abs(e.clientX - r.left) < 150) {
       robot.classList.add("jump");
-      setTimeout(() => robot.classList.remove("jump"), 500);
+      setTimeout(() => robot.classList.remove("jump"), 450);
     }
   });
 
-  /* START */
-  setState("falling");
-  fallFromTop();
-
+  update();
+  fall();
 });
 </script>
+
 
 </body>
 </html>
